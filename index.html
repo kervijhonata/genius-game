@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Genius</title>
+    <link rel="stylesheet" href="public/css/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-title">Genius</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="gamepad">
+                <button class="btn" id="btn1" data-color="red" title="trigger"></button>
+                <button class="btn" id="btn2" data-color="green" title="trigger"></button>
+                <button class="btn" id="btn3" data-color="blue" title="trigger"></button>
+                <button class="btn" id="btn4" data-color="yellow" title="trigger"></button>
+            </div>
+            <div class="details">
+                <div class="circle">
+                    <div class="container controls">
+                        <button class="btn" id="btnStartGame">START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="messages" id="message-container">
+
+        <div class="gameover-message">
+            <div class="title-container">
+                <h1>Fim de Jogo!</h1>
+            </div>
+            <div class="label-container">
+                <h3>Você marcou <span class="points" id="game-points">X</span> pontos</h3>
+            </div>
+            <div class="button-container">
+                <button class="btn" id="btn-restart">Reiniciar</button>
+            </div>
+        </div>
+
+        <div class="instructions-message">
+            <div class="title-container">
+                <h1>COMO JOGAR:</h1>
+            </div>
+            <div class="text-container">
+                <p><strong>1.</strong> Clique no botão <strong>START</strong> no centro do <i>Genius</i>.</p>
+                <p><strong>2.</strong> Observe o primeiro botão que irá acender e clique sobre ele.</p>
+                <p><strong>3.</strong> Aguarde até que os botões acendam novamente.</p>
+                <p><strong>4.</strong> Siga a sequência de cores.</p>
+            </div>
+            <div class="button-container">
+                <div class="btn" id="btn-close-instructions">ENTENDIDO!</div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="public/js/game.js"></script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap");
+:root {
+  --nt-dark-blue: #1c1629;
+  --dark-blue: #34313a;
+  --white: #ffffff;
+  --red:#ff0000;
+  --green:#00ff00;
+  --yellow:#ffff00;
+  --blue:#0000ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .header-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+main {
+  width: 100%;
+}
+main .container {
+  width: 100%;
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container .gamepad {
+  width: 400px;
+  height: 400px;
+  background-color: var(--nt-dark-blue);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  overflow: hidden;
+  gap: 20px;
+  border: 20px solid var(--nt-dark-blue);
+  border-radius: 220px;
+}
+main .container .gamepad .btn {
+  border: none;
+  filter: brightness(80%);
+  cursor: pointer;
+}
+main .container .gamepad .btn:hover {
+  filter: brightness(90%);
+}
+main .container .gamepad .btn:active {
+  filter: brightness(120%);
+}
+main .container .gamepad .btn.blink {
+  animation: blink 0.2s ease-in;
+}
+main .container .gamepad #btn1 {
+  background: var(--red);
+  border-bottom: 8px solid #1c162973;
+}
+main .container .gamepad #btn1.blink {
+  background: radial-gradient(circle at center, white, pink, var(--red), var(--red), var(--red));
+}
+main .container .gamepad #btn1:active {
+  border: none;
+  border-right: 8px solid #6b598f73;
+}
+main .container .gamepad #btn2 {
+  background: var(--green);
+  border-left: 8px solid #6b598f73;
+}
+main .container .gamepad #btn2.blink {
+  background: radial-gradient(circle at center, white, lightgreen, var(--green), var(--green), var(--green));
+}
+main .container .gamepad #btn2:active {
+  border: none;
+  border-bottom: 8px solid #6b598f73;
+}
+main .container .gamepad #btn3 {
+  background: var(--blue);
+  border-right: 8px solid #1c162973;
+}
+main .container .gamepad #btn3.blink {
+  background: radial-gradient(circle at center, white, #aeade6, var(--blue), var(--blue), var(--blue));
+}
+main .container .gamepad #btn3:active {
+  border: none;
+  border-top: 8px solid #4e436373;
+}
+main .container .gamepad #btn4 {
+  background: var(--yellow);
+  border-left: 8px solid #4e436373;
+}
+main .container .gamepad #btn4.blink {
+  background: radial-gradient(circle at center, white, lightyellow, var(--yellow), var(--yellow), var(--yellow));
+}
+main .container .gamepad #btn4:active {
+  border: none;
+  border-top: 8px solid #4e436373;
+}
+main .container .details {
+  width: 200px;
+  height: 200px;
+  background-color: var(--nt-dark-blue);
+  position: absolute;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container .details .circle {
+  width: 80%;
+  height: 80%;
+  background-color: #e6e6e6;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .container .details .circle .container.controls {
+  width: 130px;
+  height: 130px;
+}
+main .container .details .circle .container.controls .btn {
+  width: 80%;
+  height: 80%;
+  border: none;
+  border-radius: 100%;
+  margin-bottom: -2px;
+  background: white;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+  font-size: 14pt;
+  font-weight: 500;
+}
+main .container .details .circle .container.controls .btn:hover, main .container .details .circle .container.controls .btn:focus {
+  background: gray;
+}
+main .container .details .circle .container.controls .btn:active {
+  background: #dbdbdb;
+}
+main .container .details .circle .container.controls .btn:not(:active) {
+  background: white;
+}
+
+.messages {
+  width: 100%;
+  height: 100vh;
+  background-color: #34313a;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Keep 'none' as default; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.messages.visible {
+  display: flex;
+}
+.messages .gameover-message {
+  display: none;
+  width: 300px;
+  background-color: var(--nt-dark-blue);
+  padding: 20px 0;
+  border-radius: 20px;
+}
+.messages .gameover-message.visible {
+  display: inline-block;
+}
+.messages .gameover-message .title-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messages .gameover-message .label-container {
+  width: 100%;
+  text-align: center;
+}
+.messages .gameover-message .button-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messages .gameover-message .button-container .btn {
+  width: 60%;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  animation: rainbow 5s ease-in-out infinite;
+  margin-top: 10px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14pt;
+  font-weight: 600;
+}
+.messages .instructions-message {
+  display: none;
+  width: 80vw;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--nt-dark-blue);
+}
+.messages .instructions-message.visible {
+  display: inline-block;
+}
+.messages .instructions-message .title-container {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.messages .instructions-message .text-container {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.messages .instructions-message .text-container strong {
+  font-size: 14pt;
+}
+.messages .instructions-message .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.messages .instructions-message .button-container .btn {
+  width: 180px;
+  height: 48px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cacaca;
+  color: var(--nt-dark-blue);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.messages .instructions-message .button-container .btn:hover, .messages .instructions-message .button-container .btn:focus, .messages .instructions-message .button-container .btn:active {
+  animation: rainbow 5s ease-in-out infinite;
+}
+.messages .instructions-message .button-container .btn:not(:active) {
+  background: #cacaca;
+}
+
+@keyframes blink {
+  0% {
+    filter: brightness(120%);
+  }
+  50% {
+    filter: brightness(120%);
+  }
+  100% {
+    filter: brightness(80%);
+  }
+}
+@keyframes rainbow {
+  0% {
+    background: var(--red);
+  }
+  25% {
+    background: var(--yellow);
+  }
+  50% {
+    background: var(--green);
+  }
+  75% {
+    background: var(--blue);
+  }
+  100% {
+    background: var(--red);
+  }
+}
+@media screen and (max-width: 767px) {
+  main .container .gamepad {
+    width: 300px;
+    height: 300px;
+  }
+  main .container .details {
+    width: 160px;
+    height: 160px;
+  }
+  main .container .details .circle {
+    width: 80%;
+    height: 80%;
+  }
+  main .container .details .circle .container.controls {
+    width: 100%;
+    height: 100%;
+  }
+  main .container .details .circle .container.controls .btn {
+    width: 80%;
+    aspect-ratio: 1/1;
+    background-color: whitesmoke;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
