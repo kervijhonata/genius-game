@@ -18,9 +18,9 @@ var points = 0
 
 // Sounds
 const sounds = {
-    low: new Audio("/public/audio/low.mp3"),
-    mid: new Audio("/public/audio/mid.mp3"),
-    high: new Audio("/public/audio/high.mp3")
+    low: new Audio("./audio/low.mp3"),
+    mid: new Audio("./audio/mid.mp3"),
+    high: new Audio("./audio/high.mp3")
 }
 
 // EventListeners
