@@ -8,6 +8,7 @@
     --green:#00ff00;
     --yellow:#ffff00;
     --blue:#0000ff;
+    --yellowish: #e9b387;
 }
 
 * {
@@ -305,8 +306,37 @@ main {
 
 }
 
-// Animations
+footer {
+    width: 100%;
+    box-sizing: border-box;
 
+    .dev-container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background: #1c16295d;
+        color: var(--yellowish);
+
+        p {
+            line-height: 14pt;
+            font: {
+                family: 'Consolas', monospace;
+                size: 10pt;
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                font: {
+                    family: 'Poppins', sans-serif;
+                    size: 9pt;
+                }
+             }
+        }
+    }
+}
+
+
+// Animations
 @keyframes blink {
     0% {
         filter: brightness(120%);
