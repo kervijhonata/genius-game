@@ -7,6 +7,7 @@
   --green:#00ff00;
   --yellow:#ffff00;
   --blue:#0000ff;
+  --yellowish: #e9b387;
 }
 
 * {
@@ -262,6 +263,29 @@ main .container .details .circle .container.controls .btn:not(:active) {
 }
 .messages .instructions-message .button-container .btn:not(:active) {
   background: #cacaca;
+}
+
+footer {
+  width: 100%;
+  box-sizing: border-box;
+}
+footer .dev-container {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background: #1c16295d;
+  color: var(--yellowish);
+}
+footer .dev-container p {
+  line-height: 14pt;
+  font-family: "Consolas", monospace;
+  font-size: 10pt;
+}
+footer .dev-container p a {
+  text-decoration: none;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 9pt;
 }
 
 @keyframes blink {
