@@ -338,6 +338,11 @@ footer .dev-container p a {
     aspect-ratio: 1/1;
     background-color: whitesmoke;
   }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
